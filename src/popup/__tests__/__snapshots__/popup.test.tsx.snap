@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component renders 1`] = `
+<div
+  className="panel menu-panel container-panel"
+  id="container-panel"
+>
+  <h3
+    className="title"
+  >
+    Granted Containers
+  </h3>
+  <hr />
+  <div
+    className="scrollable identities-list"
+  >
+    <table
+      className="menu"
+      id="identities-list"
+    />
+  </div>
+  <div
+    className="v-padding-hack-footer"
+  />
+  <div
+    className="bottom-btn keyboard-nav controller"
+    data-i18n-message-id="manageContainers"
+    id="manage-containers-link"
+    onClick={[Function]}
+    tabIndex={0}
+  >
+    Clear Containers
+  </div>
+</div>
+`;
