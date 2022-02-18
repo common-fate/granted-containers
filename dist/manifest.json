@@ -1,10 +1,10 @@
 {
     "manifest_version": 2,
     "name": "Granted Containers",
-    "description": "View multiple AWS accounts and regions in a single browser.",
-    "version": "1.0.0",
+    "description": "View multiple cloud accounts and regions in a single browser.",
+    "version": "1.0.2",
     "browser_action": {
-        "default_icon": "icon-16.png",
+        "default_icon": "granted-icon.svg",
         "default_popup": "popup.html"
     },
     "background": {
@@ -12,9 +12,9 @@
         "persistent": false
     },
     "icons": {
-        "16": "icon-16.png",
-        "48": "icon-48.png",
-        "128": "icon-128.png"
+        "16": "granted-icon.svg",
+        "48": "granted-icon.svg",
+        "128": "granted-icon.svg"
     },
     "protocol_handlers": [
         {
@@ -23,11 +23,5 @@
             "uriTemplate": "/opener.html#%s"
         }
     ],
-    "permissions": [
-        "contextualIdentities",
-        "cookies",
-        "tabs",
-        "bookmarks",
-        "storage"
-    ]
+    "permissions": ["contextualIdentities", "cookies", "tabs", "storage"]
 }
