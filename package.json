@@ -1,6 +1,6 @@
 {
     "name": "@commonfate/granted-containers",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A Firefox extension to open cloud accounts in separate containers",
     "main": "index.js",
     "scripts": {
