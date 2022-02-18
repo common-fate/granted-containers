@@ -7,9 +7,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="chrome://browser/skin/error-pages.css">
     <style>
+        @import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
         #internalErrorContainer .title {
+            font-family: "Rubik";
             background-image: url("chrome://global/skin/icons/error.svg");
-            fill: red;
+            /* fill: red; */
+            font-weight: 300;
+            font-style: normal;
+            color: #151617;
+        }
+        body {
+            background-color: #EEEDF4;
+            font-family: "Rubik";
+            color: #151617
         }
         
         #securityConfirmationContainer .title {
@@ -48,7 +58,7 @@
                     <div>
                         <p>We are unable to open the URL you requested.</p>
                         <p>This could be due to an internal problem or some mistakes in your link. Please check the correctness of your link and try again. If you think there's a problem with an extension, please <a href="https://github.com/honsiorovskyi/open-url-in-container/issues">let us know</a>.</p>
-
+                        <p>Contact us <a href="https://commonfate.io/contact">here</a>.</p>
                         <p>Below you can see some error details:</p>
                         <p id="internalErrorBody"></p>
                     </div>
@@ -83,8 +93,6 @@
             </div>
             <!-- / Security confirmation -->
         </div>
-        <div>Hello world!!!</div>
-
         <script src="./js/opener.js" type="module"></script>
 </body>
 
