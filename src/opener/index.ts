@@ -22,28 +22,7 @@ async function openTabInContainer(container: Container) {
 
 async function main() {
     try {
-        // get extension parameters
         const container = parseOpenerParams(window.location.hash);
-        console.log({ container });
-        // const openerParams = new OpenerParameters(parsedParams);
-
-        // // verify input signature to prevent clickjacking
-        // try {
-        //     await openerParams.verify(
-        //         await getSigningKey(),
-        //         parsedParams.signature,
-        //     );
-        // } catch (e) {
-        //     if (e instanceof SignatureError) {
-        //         // require user confirmation if signature verification failed
-        //         requestConfirmation(openerParams);
-        //         return;
-        //     }
-
-        //     throw e;
-        // }
-
-        // // finally, open a new tab
         await openTabInContainer(container);
     } catch (e) {
         error(e);
