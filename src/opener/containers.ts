@@ -49,8 +49,8 @@ function hashCode(str: string) {
     return hash;
 }
 
-const colorFromContainerName = (name: string): string => {
-    const hash = hashCode(name);
+export const colorFromContainerName = (name: string): string => {
+    const hash = Math.abs(hashCode(name));
     const index = hash % (availableContainerColors.length - 1);
     return availableContainerColors[index];
 };
