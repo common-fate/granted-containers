@@ -14,14 +14,6 @@ export async function newTab(
             index: currentTab.index + 1,
         };
 
-        // if (browserInfo.version >= 58) {
-        //     createTabParams.openInReaderMode = params.openInReaderMode;
-        // } else {
-        //     console.warn(
-        //         "openInReaderMode parameter is not supported in Firefox < 58",
-        //     );
-        // }
-
         await browser.tabs.create(createTabParams);
         currentTab.id && (await browser.tabs.remove(currentTab.id));
     } catch (e) {
