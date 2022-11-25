@@ -33,6 +33,8 @@ async function lookupContainer(name: string) {
 export interface Container {
     name: string;
     url: string;
+    color?: string;
+    icon?: string;
 }
 
 function hashCode(str: string) {
@@ -55,19 +57,15 @@ export const colorFromContainerName = (name: string): string => {
     return availableContainerColors[index];
 };
 
-function createContainer(name: string) {
-    return browser.contextualIdentities.create({
-        name: name,
-        color: colorFromContainerName(name),
-        icon: defaultIcon,
-    });
-}
-
-export async function prepareContainer({ name }: Container) {
+export async function prepareContainer({ name, color, icon }: Container) {
     const container = await lookupContainer(name);
 
     if (!container) {
-        const created = await createContainer(name);
+        const created = await browser.contextualIdentities.create({
+            name: name,
+            color: color || colorFromContainerName(name),
+            icon: icon || defaultIcon,
+        });
         await saveContainerId(created.cookieStoreId);
         return created;
     }
