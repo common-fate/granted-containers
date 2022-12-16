@@ -59,7 +59,6 @@ export const colorFromContainerName = (name: string): string => {
 
 export async function prepareContainer({ name, color, icon }: Container) {
     const container = await lookupContainer(name);
-
     if (!container) {
         const created = await browser.contextualIdentities.create({
             name: name,
@@ -68,6 +67,12 @@ export async function prepareContainer({ name, color, icon }: Container) {
         });
         await saveContainerId(created.cookieStoreId);
         return created;
+    } else {
+        // update the existing container if the color or icon have changed
+        browser.contextualIdentities.update(container.cookieStoreId, {
+            color: color || container.color,
+            icon: icon || container.icon,
+        });
     }
 
     return container;
