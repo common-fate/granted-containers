@@ -92,10 +92,14 @@ export function parseOpenerParams(rawHash: string): Container {
     }
     // ensure that the URL is valid, by parsing it as a URL
     const url = new URL(urlString).toString();
+    const color = qs.get("color");
+    const icon = qs.get("icon");
 
     const container: Container = {
         name,
         url,
+        color: color && allowedContainerColors.indexOf(color) ? color : undefined,
+        icon: icon && allowedContainerIcons.indexOf(icon) ? icon : undefined,
     };
 
     return container;
