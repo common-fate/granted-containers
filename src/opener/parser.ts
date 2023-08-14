@@ -98,8 +98,8 @@ export function parseOpenerParams(rawHash: string): Container {
     const container: Container = {
         name,
         url,
-        color: color && allowedContainerColors.indexOf(color) ? color : undefined,
-        icon: icon && allowedContainerIcons.indexOf(icon) ? icon : undefined,
+        color: color && allowedContainerColors.indexOf(color) !== -1 ? color : undefined,
+        icon: icon && allowedContainerIcons.indexOf(icon) !== -1 ? icon : undefined,
     };
 
     return container;
